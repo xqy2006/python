@@ -100,10 +100,10 @@ print(package_list)`;
             console.log(this.code);
             const output = await this.pyodide.runPythonAsync(this.code) ?? ''
             const stdout = await this.pyodide.runPythonAsync('sys.stdout.getvalue()')
-            this.console += stdout;
+            this.console = stdout;
         }
         catch(e){
-            this.console += e;
+            this.console = e;
         }
 
     },
